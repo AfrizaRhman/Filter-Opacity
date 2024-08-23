@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Image and Opacity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: black;
+            margin-top: 20px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #imageContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        #imageContainer img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            select, button {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Change Image and Opacity</h1>
+
+    <form id="imageForm">
+        <label for="imageSelect">Choose an image:</label>
+        <select id="imageSelect">
+            <option value="img 4.jpg">Image 1</option>
+            <option value="img 4.jpg">Image 2</option>
+            <option value="img 4.jpg">Image 3</option>
+        </select>
+
+        <label for="opacitySelect">Choose opacity:</label>
+        <select id="opacitySelect">
+            <option value="1">1</option>
+            <option value="0.5">0.5</option>
+            <option value="0.2">0.2</option>
+        </select>
+
+        <button type="button" onclick="changeImage()">Kirim</button>
+    </form>
+
+    <div id="imageContainer">
+        <img id="displayedImage" src="img 4.jpg" style="width: 300px; opacity: 1;">
+        <img id="displayedImage" src="img 4.jpg" style="width: 300px; opacity: 1;">
+        <img id="displayedImage" src="img 4.jpg" style="width: 300px; opacity: 1;">
+    </div>
+
+    <script>
+        function changeImage() {
+            var imageSelect = document.getElementById("imageSelect").value;
+            var opacitySelect = document.getElementById("opacitySelect").value;
+
+            var image = document.getElementById("displayedImage");
+            image.src = imageSelect;
+            image.style.opacity = opacitySelect;
+        }
+    </script>
+</body>
+</html>
